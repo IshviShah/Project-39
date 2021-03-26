@@ -57,14 +57,14 @@ class Game{
                        
                      if(index === player.index){
                          
-                         fill("black");
-                         textSize(25);
-                         text(allPlayers[plr].name ,x-25,y+25);
+                        fill("black");
+                        textSize(25);
+                        text(allPlayers[plr].name ,x-25,y+25);
 
-                         
-                     }
+                        
+                    }
                     
-                     
+                     //text to display player score.
                  
                  }
                 
@@ -101,9 +101,13 @@ class Game{
                  }
                  
                   if (player.index !== null) {
-                     //fill code here, to destroy the objects.
-                     fruitGroup.destroyEach();
-                     fruitGroup.velocityY = 0;
+                     //fill code here, to destroy the objects. (Use the one in the class project 39)
+                     for (var i = 0; i < fruitGroup.length; i++) { 
+                        if (fruitGroup.get(i).isTouching(players)) { 
+                            fruitGroup.get(i).destroy(); 
+                        } 
+                    }
+                     // add the condition to calculate the score. and use update ti update the values in the database.
                   }
                 
 
